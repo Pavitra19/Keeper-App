@@ -16,15 +16,9 @@ import Footer from "./Footer";
 function App() {
   return (
     <div>
-      <header>
-        <Header />
-      </header>
-      <body>
-        <Note />
-      </body>
-      <footer>
-        <Footer />
-      </footer>
+      <Header />
+      <Note />
+      <Footer />
     </div>
   );
 }
