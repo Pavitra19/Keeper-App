@@ -8,10 +8,19 @@
 //<h1> for a title and a <p> for the content.
 //6. Make sure that the final website is styled like the example shown here:
 //https://l1pp6.csb.app/
-
-//HINT: You will need to study the classes in the styles.css file to appy styling.
 import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App";
+import Header from "./Header";
+import Note from "./Note";
+import Footer from "./Footer";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+function App() {
+  return (
+    <div>
+      <Header />
+      {/* <Note />
+      <Footer /> */}
+    </div>
+  );
+}
+
+export default App;
