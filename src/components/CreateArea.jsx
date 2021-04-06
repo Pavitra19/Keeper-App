@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Fab from "@material-ui/core/Fab";
+import { Zoom } from "@material-ui/core";
 
 function CreateArea(props) {
   const [text, setText] = useState({
@@ -44,9 +45,11 @@ function CreateArea(props) {
           value={text.content}
           rows="3"
         />
-        <Fab onClick={submitNote}>
-          <AddIcon />
-        </Fab>
+        <Zoom in={true}>
+          <Fab onClick={submitNote}>
+            <AddIcon />
+          </Fab>
+        </Zoom>
       </form>
     </div>
   );
