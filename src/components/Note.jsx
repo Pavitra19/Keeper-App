@@ -1,6 +1,7 @@
 //5. Create a Note.jsx component to show a <div> element with a
 //<h1> for a title and a <p> for the content.
 import React from "react";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 function Note(props) {
   function handleClick() {
@@ -11,7 +12,9 @@ function Note(props) {
     <div className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button onClick={handleClick}>Delete</button>
+      <button onClick={handleClick}>
+        <DeleteIcon />
+      </button>
     </div>
   );
 }
