@@ -3,11 +3,15 @@
 //6. Make sure that the final website is styled like the example shown here:
 //https://l1pp6.csb.app/
 import React from "react";
+import HighlightIcon from "@material-ui/icons/Highlight";
 
 function Header() {
   return (
     <header>
-      <h1>Keeper</h1>
+      <h1>
+        <HighlightIcon />
+        Keeper
+      </h1>
     </header>
   );
 }
