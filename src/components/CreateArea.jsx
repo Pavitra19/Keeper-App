@@ -9,6 +9,12 @@ function CreateArea(props) {
     content: "",
   });
 
+  const [showContent, setShowContent] = useState(false);
+
+  function handleClick() {
+    setShowContent(true);
+  }
+
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -32,20 +38,25 @@ function CreateArea(props) {
   return (
     <div>
       <form className="create-note">
-        <input
-          name="title"
-          placeholder="Title"
-          onChange={handleChange}
-          value={text.title}
-        />
+        {showContent && (
+          <input
+            name="title"
+            placeholder="Title"
+            onChange={handleChange}
+            value={text.title}
+          />
+        )}
+
         <textarea
           name="content"
           placeholder="Take a Note..."
           onChange={handleChange}
+          onClick={handleClick}
           value={text.content}
-          rows="3"
+          rows={showContent ? 3 : 1}
         />
-        <Zoom in={true}>
+
+        <Zoom in={showContent}>
           <Fab onClick={submitNote}>
             <AddIcon />
           </Fab>
