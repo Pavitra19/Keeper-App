@@ -5,14 +5,14 @@ import Note from "./Note";
 import Footer from "./Footer";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([
+    { title: "Note title", content: "Note Content" },
+  ]);
 
-  function addNote(text, setText) {
-    setNotes((prevValue) => {
-      return [...prevValue, text];
+  function addNote(newNote) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, newNote];
     });
-    setText("");
-    event.preventDefault();
   }
 
   function deleteNote(id) {
@@ -36,7 +36,6 @@ function App() {
           onDelete={deleteNote}
         />
       ))}
-      <Note key={1} title="Note title" content="Note Content" />
       <Footer />
     </div>
   );

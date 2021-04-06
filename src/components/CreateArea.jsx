@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
 function CreateArea(props) {
-  const [text, setText] = useState({});
+  const [text, setText] = useState({
+    title: "",
+    content: "",
+  });
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -12,6 +15,15 @@ function CreateArea(props) {
         [name]: value,
       };
     });
+  }
+
+  function submitNote(event) {
+    props.onAdd(text);
+    setText({
+      title: "",
+      content: "",
+    });
+    event.preventDefault();
   }
 
   return (
@@ -30,14 +42,7 @@ function CreateArea(props) {
           value={text.content}
           rows="3"
         />
-        <button
-          onClick={() => {
-            props.onAdd(text, setText);
-            setText({});
-          }}
-        >
-          Add
-        </button>
+        <button onClick={submitNote}>Add</button>
       </form>
     </div>
   );
